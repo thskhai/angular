@@ -1,0 +1,28 @@
+<div class="container">
+  
+    <h1>Thêm Danh Mục</h1>
+    <a href='danhmuc/createdm'><button>Create Danhmuc</button> </a>
+  
+  
+    <h1>Danh Sách Danh Mục</h1>
+    <table class="table table-striped">
+        <thead>
+          <tr >
+            <th>ID</th>
+            <th>Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dm of danhmuc">
+            <td>{{dm._id}}</td>
+            <td>{{dm.name}}</td>
+            <td><a href="" [routerLink]="['/danhmuc/',dm._id,'edit']"><Button >Edit</Button></a>
+
+                <Button (click)="deleteDanhmuc(dm._id)">Delete</Button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
